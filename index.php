@@ -116,9 +116,16 @@
       var symbol = new esri.symbol.SimpleMarkerSymbol("circle", 16, outline, new dojo.Color([246, 142, 72]));
       var centerPoint = esri.geometry.geographicToWebMercator(new esri.geometry.Point(data.longitude, data.latitude));
       map.centerAt(centerPoint);
+      
       setTimeout(function(){
 	      map.setLevel(data.zoom);
       }, 500);
+      
+      dojo.connect(map, "onLoad", function() {
+        pin = new esri.Graphic(centerPoint, symbol);
+        map.graphics.add(pin)
+      });
+            
 	});
           
     $(function(){
