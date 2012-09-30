@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteRule ^([0-9\-\.]+),([0-9\-\.]+) index.php?latitude=$1&longitude=$2 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9]+)$ index.php?geohash=$1 [QSA,L]
+
