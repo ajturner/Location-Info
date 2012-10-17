@@ -13,7 +13,7 @@ http://map.geoloqi.com/45.516402,-122.676154
 Latitude, Longitude and Radius
 ----
 
-http://map.geoloqi.com/45.516402,-122.676154&radius=40
+http://map.geoloqi.com/45.516402,-122.676154?radius=40
 
 Latitude, Longitude and Zoom Level
 ----
