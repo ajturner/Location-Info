@@ -84,6 +84,7 @@
     var data = {
 	    latitude: <?= get('latitude', 'false') ?>,
 	    longitude: <?= get('longitude', 'false') ?>,
+	    radius: <?= get('radius', 0) ?>,
 	    geohash: "<?= get('geohash', '') ?>",
 	    zoom: <?= get('zoom', 14) ?>
     };
@@ -117,13 +118,33 @@
       var centerPoint = esri.geometry.geographicToWebMercator(new esri.geometry.Point(data.longitude, data.latitude));
       map.centerAt(centerPoint);
       
-      setTimeout(function(){
-	      map.setLevel(data.zoom);
-      }, 500);
-      
       dojo.connect(map, "onLoad", function() {
         pin = new esri.Graphic(centerPoint, symbol);
         map.graphics.add(pin)
+
+        
+        if(data.radius) {
+		  var circleSymbol = new esri.symbol.SimpleFillSymbol("solid", circleOutline, new dojo.Color([95,200,240,0.25]));
+		  var circleOutline = new esri.symbol.SimpleLineSymbol("dashdot",new dojo.Color([45,200,255]), 2);
+		  var circle = new esri.geometry.Polygon(map.spatialReference);
+	      var ring = [], // point that make up the circle
+	          pts = 60, // number of points on the circle
+	          angle = 360/pts; // used to compute points on the circle
+	      for(var i=1; i<=pts; i++) {
+	        // convert angle to raidans
+	        var radians = i * angle * Math.PI / 180;
+	        // add point to the circle
+	        ring.push([centerPoint.x + data.radius * Math.cos(radians), centerPoint.y + data.radius * Math.sin(radians)]);
+	      }
+	      ring.push(ring[0]); // start point needs to == end point
+	      circle.addRing(ring);
+	      var circleGraphic = new esri.Graphic(circle, circleSymbol);
+          map.graphics.add(circleGraphic);
+          map.setExtent(circle.getExtent());
+        } else {
+		    map.setLevel(data.zoom);
+        }
+        
       });
             
 	});
