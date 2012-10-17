@@ -8,16 +8,20 @@ This map can be accessed via a few URL formats.
 Latitude and Longitude
 ----
 
-http://map.geoloqi.com/45.5118,-122.6433
+http://map.geoloqi.com/45.516402,-122.676154
 
+Latitude, Longitude and Radius
+----
+
+http://map.geoloqi.com/45.516402,-122.676154&radius=40
 
 Latitude, Longitude and Zoom Level
 ----
 
-http://map.geoloqi.com/45.5118,-122.6433?zoom=14
+http://map.geoloqi.com/45.516402,-122.676154?zoom=14
 
 Geohash
 ----
 
-http://map.geoloqi.com/c20fcjjv7yrm
+http://map.geoloqi.com/c20fbqjbq2m9
 
