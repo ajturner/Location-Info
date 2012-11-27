@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,7 +52,7 @@
               <li>Geohash: <span id="loc_geohash"></span></li>
             </ul>
             <ul class="nav nav-list">
-              <li class="nav-header">Geoloqi</li>
+              <li class="nav-header">Context</li>
               <li>Locality: <span id="geoloqi_locality"></span></li>
               <li>Region: <span id="geoloqi_region"></span></li>
               <li>Country: <span id="geoloqi_country"></span></li>
