@@ -38,7 +38,7 @@
 
   </head>
 
-  <body>
+  <body class="tundra">
 
     <div class="container-fluid" id="container">
       <div class="row-fluid">
