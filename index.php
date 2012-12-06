@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 10px;
@@ -26,7 +26,7 @@
 	      height: 13px;
       }
     </style>
-    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -75,9 +75,9 @@
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
     <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.2"></script>
-    <script src="/geohash.js"></script>
+    <script src="./geohash.js"></script>
 
     <script type="text/javascript">
     var data = {
